@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui opengl xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,9 +12,14 @@ TARGET = tsenmu-mesh-viewer
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp \
+    meshviewer.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    meshviewer.h \
+    test_cgal.h
 
-FORMS    += mainwindow.ui
+FORMS    +=
+
+LIBS += -lCGAL -lgmp -lmpfr -lQGLViewer -lGLU
+QMAKE_CXXFLAGS += -frounding-math -O3

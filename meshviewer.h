@@ -1,18 +1,14 @@
 #ifndef MESHVIEWER_H
 #define MESHVIEWER_H
 
-#include <QGLViewer>
+#include <QGLViewer/qglviewer.h>
 
 class MeshViewer : public QGLViewer
 {
-    Q_OBJECT
-public:
-    explicit MeshViewer(QObject *parent = 0);
-
-signals:
-
-public slots:
-
+protected :
+  virtual void draw();
+  virtual void init();
+  virtual QString helpString() const;
 };
 
 #endif // MESHVIEWER_H
